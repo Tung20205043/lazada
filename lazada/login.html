@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login_menu.css">
+    <link rel="stylesheet" href="nen.css">
+</head>
+<body>
+    <div id="start">
+        <form action="">
+            <h3>Đăng nhập</h3>
+            <div class="form-group">
+                <input type="text" name="userName" id="userName" required>               
+                <label for="">Tên đăng nhập </label>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" required>
+                <label for="">Mật khẩu</label>
+            </div>
+            <input type="button" value="Đăng nhập" onclick="checkForm()" id="btn-login">
+        </form>
+
+    </div>
+    <script>
+        function checkForm(){            
+            //js tương tác với ID của thẻ
+            var user_name = document.getElementById("userName");
+            var mat_khau = document.getElementById("password");
+            //lấy giá trị của thẻ vừa tương tác
+            if(user_name.value==""){
+                //alert("bạn chưa nhập tên đăng nhập");
+                alert("Bạn chưa nhập tên đăng nhập");
+                user_name.focus();
+            }else if(user_name.value.length<4){
+                alert("tên đăng nhập phải dài hơn 4 ký tự");
+                user_name.focus();
+            }else if(mat_khau.value==""){
+                alert("Bạn chưa nhập mật khẩu");
+                mat_khau.focus();
+            }
+        }
+    </script>
+</body>
+</html>
